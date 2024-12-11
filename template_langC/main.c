@@ -63,7 +63,9 @@ void rmnewl( char* s )
  */
 int ndigs( unsigned int n )
 {
-    assert( n );
+    if( n == 0 ){
+        return 1;
+    }
 
-    return (int) ceil( log10( n ));
+    return (int) floor( log10( n )) + 1;
 }
