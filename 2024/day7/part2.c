@@ -6,6 +6,10 @@
 #include <errno.h>
 #include <math.h>
 
+#define NDEBUG
+#define NVERBOSE
+#define NINFO
+
 #include "problem_solver.h"
 
 //--------------------------------------------------------------------------------
@@ -20,6 +24,9 @@
 
 int numSolvable = 0;
 unsigned long long totalCorrectAccum = 0;
+
+unsigned long long accum_results[ 400 ];
+int accum_n = 0;
 
 int getDigitBase3( unsigned int opVec, int index )
 {
@@ -41,78 +48,9 @@ unsigned long long intpow10( int exp )
     return result;
 }
 
-int isConcat( int vec, int ind )
-{
-    return( getDigitBase3( vec, ind ) == CONCAT );
-}
-
-// OLD LOGIC
-// unsigned long long n1, n2, concatResult;
-// n1 = inputs[i];
-// n2 = inputs[i+1];
-
-// concatResult = n1 * intpow10(ndigs(n2));
-// concatResult += n2;
-// VERBOSE( "Concatenating %llu and %llu\n", n1, n2 );
-// VERBOSE( "Result: %llu\n", concatResult );
-
-// numConcats ++;
-
-int doConcatenations(
-        unsigned long long* inputs,
-        int                 nInputs, 
-        unsigned long long* outputs,
-        int                 opVector
-        )
-{
-    assert( nInputs > 1 );
-
-    VERBOSE( "Concatenating list: ");
-    for( int i = 0; i < nInputs; i++) {
-        VERBOSE( "%llu ", inputs[i] );
-    }
-    printf("\n");
-
-    int iOut = 0;
-    unsigned long long n1, n2, concatResult;
-
-    outputs[0] = inputs[0];
-
-    // For each input in the opVec, do CONCAT if indicated
-    for( int i = 0; i < nInputs-1; i++ ){
-        if( isConcat( opVector, i )){
-            n1 = outputs[iOut];
-            n2 = inputs[i+1];
-
-            concatResult = n1 * intpow10(ndigs(n2));
-            concatResult += n2;
-
-            outputs[iOut] = concatResult;
-        } 
-        else {
-            // no concat; copy input to output
-            // i is opVec index, but i+1 is input index
-            iOut ++;
-            outputs[iOut] = inputs[i+1];
-        }
-    }
-
-    iOut ++;
-    VERBOSE( "Done Concatenating: ");
-    for( int i = 0; i < iOut; i++) {
-        VERBOSE( "%llu ", outputs[i] );
-    }
-    printf("\n");
-
-    return iOut;
-}
-
 int isSolvable( unsigned long long sol, unsigned long long* inputs, int n )
 {
     assert( n > 1 );
-
-    int nConcatInputs = 0;
-    unsigned long long concatInputs[ MAX ];
 
     int opVector = (3 * n-1) - 1;
 
@@ -125,26 +63,28 @@ int isSolvable( unsigned long long sol, unsigned long long* inputs, int n )
     unsigned long long accum;
     while( opVector >= 0 )
     {
-        memset( concatInputs, 0, sizeof(concatInputs) );
-        nConcatInputs = 0;
-
         VERBOSE( "OpVector: %d (%d inputs) \n", opVector, n );
 
-        nConcatInputs = doConcatenations( inputs, n, concatInputs, opVector );
-
-        accum = concatInputs[0];
+        accum = inputs[0];
         DEBUG( "Starting with %llu\n", accum );
-        for( int i = 1; i < nConcatInputs; i++ ){
-            unsigned long long num = concatInputs[i];
+
+        // For each operation in the operations vector
+        for( int i = 0; i < n-1; i++ )
+        {
+            unsigned long long num = inputs[ i+1 ];
 
             switch( getDigitBase3( opVector, i ) ){
                 case CONCAT:
-                    // SKIP; we just did these
+                    DEBUG( "Concatenating %llu\n", num );
+                    accum *= intpow10( ndigs(num) );
+                    accum += num;
                     break;
+
                 case ADD:
                     DEBUG( "Adding %llu\n", num );
                     accum += num;
                     break;
+
                 case MUL:
                     accum *= num;
                     DEBUG( "Multiplying %llu\n", num );
@@ -158,11 +98,12 @@ int isSolvable( unsigned long long sol, unsigned long long* inputs, int n )
             INFO( "Found solution for %llu\n", sol );
             return 1;
         }
-        DEBUG( "Trying next\n\n" );
+        DEBUG( "Not Solvable, Trying next OpVec\n\n" );
 
         opVector --;
     }
 
+    DEBUG( "Not Solvable at all\n\n" );
     return 0;
 }
 
@@ -213,11 +154,20 @@ void SOLVER_ProcessLine( char* line )
 
     if( isSolvable( sol, inputs, n ) ){
         totalCorrectAccum += sol;
-        printf( "ACCUM: %llu\n\n", sol );
+        INFO( "ACCUM: %llu\n\n", sol );
+
+        accum_results[ accum_n ] = sol;
+        accum_n ++;
     }
 }
 
 void SOLVER_PrintSolution( void )
 {
     printf( "totalAccum: %llu\n\n", totalCorrectAccum );
+
+    printf( "nCorrect: %d\n", accum_n );
+    for( int i = 0; i < accum_n; i++ ){
+        printf( "%llu\n", accum_results[i]);
+    }
+
 }
