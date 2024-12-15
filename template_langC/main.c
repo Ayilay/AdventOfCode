@@ -69,3 +69,9 @@ int ndigs( unsigned int n )
 
     return (int) floor( log10( n )) + 1;
 }
+
+__attribute__((weak))
+void SOLVER_Init( void* arg )
+{
+}
+

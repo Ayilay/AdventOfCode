@@ -16,10 +16,6 @@
 //  API Functions
 //--------------------------------------------------------------------------------
 
-void SOLVER_Init( void* arg )
-{
-}
-
 void SOLVER_ProcessLine( char* line )
 {
     rmnewl( line );
