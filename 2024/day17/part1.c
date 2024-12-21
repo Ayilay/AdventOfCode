@@ -5,84 +5,12 @@
 #include <assert.h>
 #include <math.h>
 
+#include "cpu.h"
 #include "problem_solver.h"
 
 //--------------------------------------------------------------------------------
 //  Private State
 //--------------------------------------------------------------------------------
-
-#define adv     0
-#define bxl     1
-#define bst     2
-#define jnz     3
-#define bxc     4
-#define out     5
-#define bdv     6
-#define cdv     7
-
-// Programs are very small
-#define MAX     20
-
-#define OUTMAX  200
-
-typedef struct {
-    int A;
-    int B;
-    int C;
-
-    int PC;
-
-    int nProgram;
-    int program[ MAX ];
-
-    int nOut;
-    int output[ OUTMAX ];
-} context;
-
-
-//--------------------------------------------------------------------------------
-//  OPCODE Handlers
-//--------------------------------------------------------------------------------
-
-void handle_adv( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_bxl( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_bst( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_jnz( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_bxc( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_out( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_bdv( context* ctx, int arg )
-{
-    // TODO
-}
-
-void handle_cdv( context* ctx, int arg )
-{
-    // TODO
-}
 
 //--------------------------------------------------------------------------------
 //  Parsing Functions
@@ -120,63 +48,43 @@ void parseProgram( context* ctx, const char* input )
     }
 }
 
-void runProgram( context* cpu )
-{
-    while( cpu->PC < cpu->nProgram ){
-        int op  = cpu->program[ cpu->PC ];
-        int arg = cpu->program[ cpu->PC + 1 ];
-
-        #define HANDLE( CTX, OP )        \
-            case( OP ):                  \
-                handle_##OP( CTX, arg ); \
-                break;
-
-        switch( op ){
-            HANDLE( cpu, adv )
-            HANDLE( cpu, bxl )
-            HANDLE( cpu, bst )
-            HANDLE( cpu, jnz )
-            HANDLE( cpu, bxc )
-            HANDLE( cpu, out )
-            HANDLE( cpu, bdv )
-            HANDLE( cpu, cdv )
-        }
-    }
-}
-
-void printContext( context* ctx )
-{
-    assert( ctx );
-
-    printf( "A:  %d\n", ctx->A );
-    printf( "B:  %d\n", ctx->B );
-    printf( "C:  %d\n", ctx->C );
-    printf( "PC: %d\n", ctx->PC );
-
-    printf( "Program: ");
-    for( int i = 0; i < ctx->nProgram; i++ ){
-        printf( "%d, ", ctx->program[i] );
-    }
-    printf("\n");
-}
-
 void printSol( context* ctx )
 {
     assert( ctx );
+
+    printf( "Outputs:\n");
     for( int i = 0; i < ctx->nOut; i++ ){
         printf( "%d", ctx->output[i] );
+        if( i < ctx->nOut-1)
+            printf( ",");
     }
     printf("\n");
 }
-
 //--------------------------------------------------------------------------------
 //  API Functions
 //--------------------------------------------------------------------------------
+
+void unitTests()
+{
+    #define arraysize( A ) \
+        sizeof( A ) / sizeof( A[0] )
+
+    #define assertarray( act, nact, exp, nexp ) \
+        assert( nact == nexp );                 \
+        for( int i = 0; i < nexp; i++ )         \
+            assert( act[i] == exp[i]);
+
+    for( int i = 0; i < 64; i++ ){
+        assert( (i & 0b111) == (i % 8) );
+    }
+}
 
 context cpu;
 
 void SOLVER_Init( void* arg )
 {
+    unitTests();
+
     memset( &cpu, 0, sizeof( cpu ) );
 }
 
@@ -216,6 +124,6 @@ void SOLVER_PrintSolution( void )
 {
     runProgram( &cpu );
 
-    printContext( &cpu );
+    //printContext( &cpu );
     printSol( &cpu );
 }

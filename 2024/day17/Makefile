@@ -1,4 +1,4 @@
-reqs = main.c problem_solver.h
+reqs = cpu.c cpu.h main.c problem_solver.h
 
 executables = part1 part2
 
@@ -7,11 +7,20 @@ executables = part1 part2
 OPTS += -m32
 OPTS += -ggdb3
 
+OPTS += -I ./Unity/src
+
+SRCS += ./cpu.c
+SRCS += main.c
+
+UNITY += ./Unity/src/unity.c
 
 all: $(executables)
 
 %: $(reqs) %.c
-	gcc $(OPTS) -o $@ main.c $@.c -lm 
+	gcc $(OPTS) -o $@ $(SRCS) $@.c -lm 
+
+test: $(reqs) test.c
+	gcc $(OPTS) -o $@ cpu.c test.c $(UNITY) -lm 
 
 clean:
 	rm -f $(executables)

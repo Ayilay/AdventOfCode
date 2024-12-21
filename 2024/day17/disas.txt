@@ -1,0 +1,9 @@
+Program:
+bst     4
+bxl     3
+cdv     5
+bxc     7
+adv     3
+bxl     5
+out     5
+jnz     0
