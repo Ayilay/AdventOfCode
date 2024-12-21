@@ -4,6 +4,7 @@ executables = part1 part2
 
 # Force 32-bit compilation, it makes debugging easier
 # You can see the pointer addresses more nicely
+OPTS += -lpthread
 OPTS += -m32
 OPTS += -ggdb3
 
