@@ -8,6 +8,8 @@ BYTE_LIM = 1024
 INIT_NODE = (0,0)
 FINAL_NODE = (DIM-1,DIM-1)
 
+bytelist = []
+
 class Node:
     def __init__(self):
         self.isObstacle = False
@@ -23,6 +25,20 @@ class Node:
             return '.'
 
 allNodes = [[Node() for _ in range(DIM)] for _ in range(DIM)]
+
+def prepGrid( grid, bytelist ):
+    for r in grid:
+        for node in r:
+            node.prev = None
+            node.isVisited = False
+            node.isObstacle = False
+
+    for i,b in enumerate( bytelist ):
+        if i == BYTE_LIM:
+            return
+
+        grid[b[0]][b[1]].isObstacle = True
+
 
 def printGrid( grid ):
     for r in grid:
@@ -57,14 +73,13 @@ def SOLVER_Init( argv ):
 
 def SOLVER_ProcessLine( line: str ):
     global nBytes
-    if nBytes >= BYTE_LIM:
-        return
 
     line = line.strip()
     (x,y) = line.split(',')
     x = int(x)
     y = int(y)
-    allNodes[y][x].isObstacle = True
+
+    bytelist.append( (y,x) )
 
     nBytes += 1
 
@@ -76,15 +91,20 @@ def getNode( grid, rc ):
 
 
 def doBFS( grid ):
-    deadloop = 10000
+    # O(N^2) steps taken to solve NxN maze + some margin
+    deadloop = DIM*DIM
 
     nodeq = deque()
     nodeq.append( INIT_NODE )
 
     while( len(nodeq) > 0 ):
         node = nodeq.popleft()
-        neigh = neighbors( allNodes, node )
 
+        # Early-exit if we find node
+        if node == FINAL_NODE:
+            return True
+
+        neigh = neighbors( allNodes, node )
         for n in neigh:
             getNode(allNodes,n).prev = node
             getNode(allNodes,n).isVisited = True
@@ -94,27 +114,33 @@ def doBFS( grid ):
 
         deadloop -= 1
         if deadloop == 0:
-            raise RuntimeError( "Too many loop iterations" )
+            raise RuntimeError( f"Too many loop iterations, NBYTES={BYTE_LIM}" )
+    
+    # No solution found via early-exit condition
+    print( f"lastnode: {bytelist[BYTE_LIM-1]}" )
+    return False
 
 def solveMaze( grid ):
     deadloop = 1000
 
-    doBFS( grid )
+    print( f"Trying {BYTE_LIM}" )
+    isSolveable = doBFS( grid )
+    if not isSolveable:
+        # Hacky solution to abort program...
+        print( f"SOLUTION FOUND: {BYTE_LIM}" )
+        raise RuntimeError( "sol found" )
 
-    nsteps = 0
-    node = FINAL_NODE
-    while node != INIT_NODE:
-        nsteps += 1
-        node = getNode( allNodes, node ).prev
-
-        deadloop -= 1
-        if deadloop == 0:
-            raise RuntimeError( "Too many loop iterations" )
-
-    print( f"{nsteps=}")
 
 def SOLVER_PrintSolution():
-    solveMaze( allNodes )
+    global BYTE_LIM
+
+    while BYTE_LIM < len( bytelist ):
+        
+        print( f"Trying {BYTE_LIM} prep" )
+        prepGrid( allNodes, bytelist )
+        solveMaze( allNodes )
+
+        BYTE_LIM += 1
 
 def main( argv ):
     filename = "input.txt"
