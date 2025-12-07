@@ -21,6 +21,8 @@
 #define INFO( ... ) // NOTHING
 #endif
 
+typedef unsigned long long ull;
+
 void SOLVER_Init( void* );
 
 void SOLVER_ProcessLine( char* );
@@ -30,5 +32,9 @@ void SOLVER_PrintSolution( void );
 // Other utilities
 void rmnewl( char* s );
 int  ndigs( unsigned int n );
+
+// Problem-specific functions
+int isIllegal(ull num);
+ull nextIllegal(ull begin, ull end);
 
 #endif
