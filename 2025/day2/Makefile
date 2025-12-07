@@ -1,6 +1,6 @@
 reqs = main.c problem_solver.h
 
-executables = part1
+executables = part1 part2
 
 # Force 32-bit compilation, it makes debugging easier
 # You can see the pointer addresses more nicely
