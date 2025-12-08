@@ -21,6 +21,8 @@
 #define INFO( ... ) // NOTHING
 #endif
 
+typedef unsigned long long ull;
+
 void SOLVER_Init( void* );
 
 void SOLVER_ProcessLine( char* );
