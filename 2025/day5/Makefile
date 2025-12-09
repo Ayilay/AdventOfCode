@@ -1,4 +1,7 @@
-reqs = main.c problem_solver.h
+srcs += utils.c
+srcs += sc_list.c
+
+reqs = $(srcs) problem_solver.h
 
 executables = part1 part2
 
@@ -18,11 +21,12 @@ UNITY_SRCS   = $(wildcard $(UNITY_PATH)/*.c)
 
 all: $(executables)
 
+# part1 and part2
 %: $(reqs) %.c
-	gcc $(OPTS) -o $@ main.c $@.c -lm 
+	gcc $(OPTS) -o $@ main.c $(srcs) $@.c -lm 
 
 test: test.c $(UNITY_SRCS)
-	gcc $(OPTS) $(TEST_OPTS) -o $@ test.c $(UNITY_SRCS) -lm
+	gcc $(OPTS) $(TEST_OPTS) -o $@ test.c $(srcs) part2.c $(UNITY_SRCS) -lm
 
 clean:
 	rm -f $(executables)

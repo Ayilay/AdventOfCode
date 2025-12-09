@@ -31,6 +31,6 @@ void SOLVER_PrintSolution( void );
 
 // Other utilities
 void rmnewl( char* s );
-int  ndigs( unsigned int n );
+int  ndigs( ull n );
 
 #endif
