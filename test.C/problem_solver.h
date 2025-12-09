@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 
+// To disable these, define NVERBOSE before including this header file
 #ifndef NVERBOSE
 #define VERBOSE( ... )  printf( __VA_ARGS__ )
 #else
@@ -23,6 +24,7 @@
 
 typedef unsigned long long ull;
 
+// The init is optional; most problems won't need it
 void SOLVER_Init( void* );
 
 void SOLVER_ProcessLine( char* );
