@@ -56,6 +56,28 @@ void test_range() {
     TEST_ASSERT_EQUAL( 0, nextIllegal(38593860, 38593862));
 }
 
+void test_digit() {
+    ull num = 123456789123456789;
+
+    TEST_ASSERT_EQUAL( 9, digit(num, 0) );
+    TEST_ASSERT_EQUAL( 8, digit(num, 1) );
+    TEST_ASSERT_EQUAL( 7, digit(num, 2) );
+    TEST_ASSERT_EQUAL( 6, digit(num, 3) );
+    TEST_ASSERT_EQUAL( 5, digit(num, 4) );
+    TEST_ASSERT_EQUAL( 4, digit(num, 5) );
+    TEST_ASSERT_EQUAL( 3, digit(num, 6) );
+    TEST_ASSERT_EQUAL( 2, digit(num, 7) );
+    TEST_ASSERT_EQUAL( 1, digit(num, 8) );
+    TEST_ASSERT_EQUAL( 9, digit(num, 9) );
+    TEST_ASSERT_EQUAL( 8, digit(num, 10) );
+    TEST_ASSERT_EQUAL( 7, digit(num, 11) );
+    TEST_ASSERT_EQUAL( 6, digit(num, 12) );
+    TEST_ASSERT_EQUAL( 5, digit(num, 13) );
+    TEST_ASSERT_EQUAL( 4, digit(num, 14) );
+    TEST_ASSERT_EQUAL( 3, digit(num, 15) );
+    TEST_ASSERT_EQUAL( 2, digit(num, 16) );
+}                      
+
 int main()
 {
     UNITY_BEGIN();
@@ -63,6 +85,7 @@ int main()
     RUN_TEST(test_1);
     RUN_TEST(test_additional);
     RUN_TEST(test_range);
+    RUN_TEST(test_digit);
 
     return UNITY_END();
 }

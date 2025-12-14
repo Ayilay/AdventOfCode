@@ -34,7 +34,9 @@ void rmnewl( char* s );
 int  ndigs( unsigned int n );
 
 // Problem-specific functions
+ull nextIllegal2(ull begin, ull end);
 int isIllegal(ull num);
+int digit(ull num, int which);
 ull nextIllegal(ull begin, ull end);
 
 #endif

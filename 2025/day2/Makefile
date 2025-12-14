@@ -1,4 +1,4 @@
-reqs = main.c problem_solver.h
+reqs = main.c problem_solver.h isIllegal.c
 
 executables = part1 part2
 
@@ -17,7 +17,7 @@ all: $(executables)
 %: $(reqs) %.c
 	gcc $(OPTS) -o $@ main.c $@.c isIllegal.c -lm 
 
-test: test.c $(UNITY_SRCS)
+test: test.c $(reqs) $(UNITY_SRCS)
 	gcc $(OPTS) $(TEST_OPTS) -o $@ test.c $(UNITY_SRCS) isIllegal.c -lm
 
 clean:

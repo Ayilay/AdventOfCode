@@ -59,19 +59,7 @@ void rmnewl( char* s )
     }
 }
 
-/** Calculate how many digits in a (positive) number
- */
-int ndigs( unsigned int n )
-{
-    if( n == 0 ){
-        return 1;
-    }
+void SOLVER_Init(void* n){
 
-    return (int) floor( log10( n )) + 1;
-}
-
-__attribute__((weak))
-void SOLVER_Init( void* arg )
-{
 }
 
