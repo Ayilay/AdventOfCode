@@ -1,9 +1,11 @@
-reqs = main.c problem_solver.h
+reqs = main.c problem_solver.h Makefile
 
 executables = part1 part2
 
 # Unless we are debugging, we want optimized build
 OPTS += -O2
+OPTS += -Wuninitialized
+OPTS += -Wno-implicit-function-declaration
 
 # If we ARE debugging:
 # - Force 32-bit compilation, it makes debugging easier
@@ -19,10 +21,10 @@ UNITY_SRCS   = $(wildcard $(UNITY_PATH)/*.c)
 all: $(executables)
 
 %: $(reqs) %.c
-	gcc $(OPTS) -o $@ main.c $@.c -lm 
+	gcc $(OPTS) -o $@ main.c util.c $@.c -lm 
 
-test: test.c $(UNITY_SRCS)
-	gcc $(OPTS) $(TEST_OPTS) -o $@ test.c $(UNITY_SRCS) -lm
+test: test.c $(UNITY_SRCS) part2.c
+	gcc $(OPTS) $(TEST_OPTS) -o $@ test.c util.c part2.c $(UNITY_SRCS) -lm
 
 clean:
-	rm -f $(executables)
+	rm -f $(executables) test
