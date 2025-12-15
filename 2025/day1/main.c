@@ -47,29 +47,7 @@ cleanup:
     return 0;
 }
 
-
-/** Find the last newline of a string, and replace it with a null character.
- */
-void rmnewl( char* s )
-{
-    char* ptr = strrchr( s, '\n' );
-
-    if( ptr ) {
-        *ptr = '\0';
-    }
-}
-
-/** Calculate how many digits in a (positive) number
- */
-int ndigs( unsigned int n )
-{
-    if( n == 0 ){
-        return 1;
-    }
-
-    return (int) floor( log10( n )) + 1;
-}
-
+// This one is OPTIONAL
 __attribute__((weak))
 void SOLVER_Init( void* arg )
 {

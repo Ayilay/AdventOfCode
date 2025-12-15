@@ -15,67 +15,116 @@
 // 100 means numbers 0-99
 #define CIRCUMFERENCE   100
 
-int dialRotation = 50;
-int numZeros = 0;
+int dialPosition = 50;
+int totNumZeros = 0;
 
 //--------------------------------------------------------------------------------
 //  API Functions
 //--------------------------------------------------------------------------------
 
-void rotateDial( int dir, int amount )
+int RotateL( int *dial, int amount )
 {
-    // GLOBAL vars:
-    //  dialRotation
+    int numZeros = 0;
 
+    if( *dial == 0 ){
+        *dial = 100;
+    }
+
+    if( amount == 0 ){
+        return 0;
+    }
+
+    // Rotate to reach exaclty zero
+    else if( amount == *dial ){
+        *dial = 0;
+        numZeros++;
+    } 
+
+    // Rotate, but not enough to reach a zero
+    else if( amount < *dial ){
+        *dial -= amount;
+    }
+
+    // Rotate a full revolution; we definitely pass a zero
+    else if( amount >= CIRCUMFERENCE ){
+        numZeros++;
+        numZeros += RotateL( dial, amount - CIRCUMFERENCE );
+    }
+
+    // Rotate enough to pass the zero, but not enough for a full revolution
+    else {
+        numZeros++;
+
+        int delta = *dial;
+        *dial = 100;
+        amount -= delta;
+
+        // Note: This will always return zero
+        RotateL( dial, amount );
+    }
+
+    return numZeros;
+}
+
+int RotateR( int* dial, int amount )
+{
+    int numZeros = 0;
+
+    if( *dial == 100 ){
+        *dial = 0;
+    }
+
+    if( amount == 0 ){
+        return 0;
+    }
+
+    // Rotate to reach exaclty zero
+    else if( amount == (CIRCUMFERENCE-*dial) ){
+        *dial = 0;
+        numZeros++;
+    } 
+
+    // Rotate, but not enough to reach a zero
+    else if( amount < (CIRCUMFERENCE-*dial) ){
+        *dial += amount;
+    }
+
+    // Rotate a full revolution; we definitely pass a zero
+    else if( amount >= CIRCUMFERENCE ){
+        numZeros++;
+        numZeros += RotateR( dial, amount - CIRCUMFERENCE );
+    }
+
+    // Rotate enough to pass the zero, but not enough for a full revolution
+    else {
+        numZeros++;
+
+        int delta = (CIRCUMFERENCE - *dial);
+        *dial = 0;
+        amount -= delta;
+
+        // Note: This will always return zero
+        RotateR( dial, amount );
+    }
+
+    return numZeros;
+}
+
+int rotateDial( int* dial, int dir, int amount )
+{
     char* header = "";
+    int numZeros;
 
-    // Do NOT modulo-wrap yet; We must count each zero-wraparound
     if( dir == 'L' ) {
-        // Edge case: If orig dial position is zero, the under-rotate
-        // logic will detect a false-positive zero cross. So we compensate
-        if( dialRotation == 0 ){
-            printf( "Compensate for FALSE-underflow\n" );
-            numZeros --;
-        }
-
-        dialRotation -= amount;
-
+        numZeros = RotateL( dial, amount );
     } else if( dir == 'R' ) {
-        dialRotation += amount;
+        numZeros = RotateR( dial, amount );
     } else {
         printf( "Unexpected direction %c, aborting", dir );
         abort();
     }
 
-    // Part2: Detect zero-rollover and count it, then do the rollover
-    while( dialRotation < 0 ){
-        //header= "UNDER click";
-        numZeros ++;
-        dialRotation += CIRCUMFERENCE;
-        printf( "Under-click, dialRot is %3d\n", dialRotation );
-    }
-
-    while( dialRotation > CIRCUMFERENCE ){
-        //header = "OVER click";
-        numZeros++  ;
-        dialRotation %= CIRCUMFERENCE;
-        printf( "Over-click, dialRot is %3d\n", dialRotation );
-    }
-
-    // Edge case where dialRotation == CIRCUMFERENCE:
-    // We do one last modulo-wrap and check if exactly zero
-    dialRotation %= CIRCUMFERENCE;
-    if( dialRotation == 0 ) {
-        header = "EXACT click";
-        numZeros ++;
-    }
-
-    printf( "%20s Rotate dial %c by %3d. New position is %4d\n",
-            header,
-            dir,
-            amount,
-            dialRotation
-          );
+    return numZeros;
 }
 
 void SOLVER_ProcessLine( char* line )
@@ -88,10 +137,43 @@ void SOLVER_ProcessLine( char* line )
     dir = line[0];
     amount = atoi( &line[1] );
 
-    rotateDial( dir, amount );
+    totNumZeros += rotateDial( &dialPosition, dir, amount );
 }
 
 void SOLVER_PrintSolution( void )
 {
-    printf( "Number of zeros:\n%d\n", numZeros );
+    printf( "Number of zeros:\n%d\n", totNumZeros );
+}
+
+
+//------------------------------------------------------------------------------
+//  Various Utilities
+//------------------------------------------------------------------------------
+
+/** Find the last newline of a string, and replace it with a null character.
+ */
+void rmnewl( char* s )
+{
+    char* ptr = strrchr( s, '\n' );
+
+    if( ptr ) {
+        *ptr = '\0';
+    }
+}
+
+/** Calculate how many digits in a (positive) number
+ */
+int ndigs( ull n )
+{
+    if( n == 0 ){
+        return 1;
+    }
+
+    int digs = 0;
+    while( n > 0 ){
+        digs ++;
+        n /= 10;
+    }
+
+    return digs;
 }
