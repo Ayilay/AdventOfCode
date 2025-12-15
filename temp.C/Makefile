@@ -4,6 +4,7 @@ executables = part1 part2
 
 # Unless we are debugging, we want optimized build
 OPTS += -O2
+OPTS += -Wuninitialized
 
 # If we ARE debugging:
 # - Force 32-bit compilation, it makes debugging easier
