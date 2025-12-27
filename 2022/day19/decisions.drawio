@@ -1,0 +1,274 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="V-n2fnSOP_qx8ky6mn_f">
+    <mxGraphModel dx="815" dy="480" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cLi5whjqE75KJOcrppP9-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-2" target="cLi5whjqE75KJOcrppP9-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-2" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-3" value="Time Elapsed (mins)" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-4" value="" style="endArrow=classic;startArrow=none;html=1;rounded=0;startFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="40" as="sourcePoint" />
+            <mxPoint x="110" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-5" value="0" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="152.5" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-6" value="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-7" target="cLi5whjqE75KJOcrppP9-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-7" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-8" value="1 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="260" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-11" value="2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="430" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-12" target="cLi5whjqE75KJOcrppP9-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-12" target="cLi5whjqE75KJOcrppP9-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-36" value="+1 clay&lt;div&gt;robot&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cLi5whjqE75KJOcrppP9-35">
+          <mxGeometry x="0.1156" y="-1" relative="1" as="geometry">
+            <mxPoint x="-19" y="71" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-12" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-13" value="2 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-14" value="3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="570" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-15" target="cLi5whjqE75KJOcrppP9-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="135" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-15" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-16" value="3 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="540" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-17" value="4" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="710" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-18" target="cLi5whjqE75KJOcrppP9-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-32" value="+1 ore&lt;div&gt;robot&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cLi5whjqE75KJOcrppP9-31">
+          <mxGeometry x="-0.0643" y="2" relative="1" as="geometry">
+            <mxPoint x="-22" y="44" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-18" target="cLi5whjqE75KJOcrppP9-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-18" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-19" value="4 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="680" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-28" value="5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="850" y="65" width="35" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-29" target="cLi5whjqE75KJOcrppP9-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-29" value="2 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="200" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-30" value="1 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="820" y="230" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-33" target="cLi5whjqE75KJOcrppP9-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-33" value="1 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-34" value="1 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="540" y="430" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-37" target="cLi5whjqE75KJOcrppP9-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-37" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-38" value="5 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="820" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-40" target="cLi5whjqE75KJOcrppP9-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-87" value="+1 clay&lt;div&gt;robot&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-40" target="cLi5whjqE75KJOcrppP9-85">
+          <mxGeometry x="0.6845" y="-20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-40" value="1 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-41" value="2 Ore&lt;div&gt;1 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="680" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-43" target="cLi5whjqE75KJOcrppP9-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-43" value="1 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-44" value="3 Ore&lt;div&gt;2 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="820" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-46" target="cLi5whjqE75KJOcrppP9-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-46" target="cLi5whjqE75KJOcrppP9-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-83" value="+1 clay&amp;nbsp;&lt;div&gt;robot&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cLi5whjqE75KJOcrppP9-82">
+          <mxGeometry x="0.4426" relative="1" as="geometry">
+            <mxPoint x="-30" y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-46" value="2 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="960" y="200" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-47" value="3 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="230" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-48" target="cLi5whjqE75KJOcrppP9-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-48" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="960" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-49" value="6 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-50" target="cLi5whjqE75KJOcrppP9-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-50" target="cLi5whjqE75KJOcrppP9-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-97" value="+1 ore&lt;div&gt;robot&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cLi5whjqE75KJOcrppP9-96">
+          <mxGeometry x="0.5963" relative="1" as="geometry">
+            <mxPoint x="-20" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-50" value="1 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="960" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-51" value="4 Ore&lt;div&gt;3 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-54" value="" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="260" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-55" value="Ore Robot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-54">
+          <mxGeometry y="30" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-56" value="Clay Robot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-54">
+          <mxGeometry y="60" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-57" value="Obsidian Robot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-54">
+          <mxGeometry y="90" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-66" value="Geode Robot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-54">
+          <mxGeometry y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-67" value="" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="260" width="110" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-68" value="4 Ore" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-67">
+          <mxGeometry y="30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-69" value="2 Ore" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-67">
+          <mxGeometry y="60" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-70" value="3 Ore, 14 Clay" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-67">
+          <mxGeometry y="90" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-71" value="2 Ore, 7 Obsidian" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="cLi5whjqE75KJOcrppP9-67">
+          <mxGeometry y="120" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-73" value="2 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="200" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-74" value="5 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="230" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-75" value="1 Ore Robot" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-76" value="7 Ore" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-77" value="1 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="390" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-78" value="5 Ore&lt;div&gt;4 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-79" value="2 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="280" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-80" value="1 Ore&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="320" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-85" target="cLi5whjqE75KJOcrppP9-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-85" value="1 Ore Robot&lt;div&gt;2 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="820" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-86" value="1 Ore&lt;div&gt;2 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="820" y="630" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cLi5whjqE75KJOcrppP9-88" target="cLi5whjqE75KJOcrppP9-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-88" value="1 Ore Robot&lt;div&gt;2 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="960" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-89" value="1 Ore&lt;div&gt;4 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="630" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-91" value="1 Ore Robot&lt;div&gt;2 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="590" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-92" value="3 Ore&lt;div&gt;6 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="630" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-94" value="2 Ore Robot&lt;div&gt;1 Clay Robot&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="490" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cLi5whjqE75KJOcrppP9-95" value="1 Ore&lt;div&gt;4 Clay&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="530" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
