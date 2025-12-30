@@ -24,7 +24,7 @@
 typedef unsigned long long ull;
 typedef unsigned int ui;
 
-void SOLVER_Init( void* );
+void SOLVER_Init( void );
 
 void SOLVER_ProcessLine( char* );
 

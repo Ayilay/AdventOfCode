@@ -18,7 +18,7 @@ int main( int argc, char* argv[] )
         filename = argv[1];
     }
 
-    SOLVER_Init( NULL );
+    SOLVER_Init();
 
     FILE* inFile;
     inFile = fopen( filename, "r" );
@@ -32,8 +32,6 @@ int main( int argc, char* argv[] )
     line = fgets( lineBuf, BUFSIZ, inFile );
     while( line != NULL )
     {
-        //printf( "%s", line );
-
         SOLVER_ProcessLine( line );
 
 
@@ -81,7 +79,7 @@ int ndigs( ull n )
 
 // This one is OPTIONAL
 __attribute__((weak))
-void SOLVER_Init( void* arg )
+void SOLVER_Init( void )
 {
 }
 
