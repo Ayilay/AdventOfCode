@@ -22,6 +22,7 @@
 #endif
 
 typedef unsigned long long ull;
+typedef   signed long long sll;
 typedef unsigned int ui;
 
 void SOLVER_Init( void );
@@ -33,5 +34,9 @@ void SOLVER_PrintSolution( void );
 // Other utilities
 void rmnewl( char* s );
 int  ndigs( ull n );
+
+ull  gcd(ull u, ull v);
+ull  lcm(ull u, ull v);
+int  ctz(ull n);
 
 #endif

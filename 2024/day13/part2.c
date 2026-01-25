@@ -14,6 +14,9 @@
 
 ull totalcost = 0;
 
+// Part2 adds this to prize x+y coords
+sll penalty = 10000000000000;
+
 /*
  * Crude matrix representaiton of system of equations
  *
@@ -29,13 +32,13 @@ ull totalcost = 0;
  *
  */
 typedef struct {
-    int r1[3];  // Row 1: [Xa Xb Px]
-    int r2[3];  // Row 2: [Ya Yb Py]
+    sll r1[3];  // Row 1: [Xa Xb Px]
+    sll r2[3];  // Row 2: [Ya Yb Py]
 } System;
 
-void gcdReduce( int row[3] )
+void gcdReduce( sll row[3] )
 {
-    int common = gcd( row[0], gcd(row[1], row[2]) );
+    sll common = gcd( row[0], gcd(row[1], row[2]) );
 
     // Reduction not possible
     if( common == 1 ) return;
@@ -46,9 +49,9 @@ void gcdReduce( int row[3] )
 
 void printSys( System* sys )
 {
-    int* row = sys->r1;
+    sll* row = sys->r1;
     for( int r = 0; r < 2; r++ ){
-        VERBOSE( "[ %5d %5d | %8d]\n",
+        VERBOSE( "[ %5lld %5lld | %8lld]\n",
                 row[0], row[1], row[2] );
 
         // Hack: We exit after this iter so this is last assignment
@@ -57,13 +60,30 @@ void printSys( System* sys )
     VERBOSE("\n");
 }
 
-void scaleRow( int row[3], int a )
+int anyNeg( System* sys )
+{
+    sll* row = sys->r1;
+    for( int r = 0; r < 2; r++ ){
+        for( int c = 0; c < 3; c++ ){
+            if (row[c] < 0)
+                return 1;
+        }
+
+        // Hack: We exit after this iter so this is last assignment
+        row = sys->r2;
+    }
+
+    return 0;
+}
+
+
+void scaleRow( sll row[3], int a )
 {
     for( int i = 0; i < 3; i++ )
         row[i] *= a;
 }
 
-void addRow( int dst[3], const int src[3] )
+void addRow( sll dst[3], const sll src[3] )
 {
     for( int i = 0; i < 3; i++ )
         dst[i] += src[i];
@@ -86,12 +106,12 @@ int solve( System* sys )
     printSys( sys );
 
     // Pivot on row1
-    int common = lcm( sys->r1[0], sys->r2[0] );
+    sll common = lcm( sys->r1[0], sys->r2[0] );
 
     // Scale both rows until their pivot elements are equal
-    int div1 = common / sys->r1[0];
-    int div2 = common / sys->r2[0];
-    VERBOSE( "lcm: %d    div1: %d, div2: %d\n\n", common, div1, div2 );
+    sll div1 = common / sys->r1[0];
+    sll div2 = common / sys->r2[0];
+    VERBOSE( "lcm: %lld    div1: %lld, div2: %lld\n\n", common, div1, div2 );
 
     scaleRow( sys->r1, -div1 );
     scaleRow( sys->r2, div2 );
@@ -137,7 +157,7 @@ int solve( System* sys )
     // Scale both rows until their pivot elements are equal
     div1 = common / sys->r1[1];
     div2 = common / sys->r2[1];
-    VERBOSE( "lcm: %d    div1: %d, div2: %d\n\n", common, div1, div2 );
+    VERBOSE( "lcm: %lld    div1: %lld, div2: %lld\n\n", common, div1, div2 );
 
     scaleRow( sys->r1, div1 );
     scaleRow( sys->r2, -div2 );
@@ -176,13 +196,23 @@ int solve( System* sys )
         return 0;
     }
 
+    // RECHECK this
+    if( anyNeg(sys) ) {
+        VERBOSE( "No solution: some are negative\n" );
+        printSys( sys );
+        return 0;
+    }
+
     VERBOSE( "Final solution:\n" );
     printSys( sys );
     return 1;
 }
 
-ull getCost( int A, int B )
+ull getCost( sll A, sll B )
 {
+    assert( A >= 0 );
+    assert( B >= 0 );
+
     return (3*A) + B;
 }
 
@@ -198,7 +228,7 @@ void SOLVER_ProcessLine( char* line )
     static System sys = {0};
 
     int fullyParsed = 0;
-    int *x, *y;
+    sll *x, *y;
     char* ptr;
     char* endptr;
     if( strchr( line, 'A' ) ){
@@ -233,6 +263,10 @@ void SOLVER_ProcessLine( char* line )
     assert( ptr != endptr );
 
     if( fullyParsed ){
+        // Part2: We add penalty to prize coords
+        *x += penalty;
+        *y += penalty;
+
         int hasSol = solve( &sys );
         if( hasSol ){
             static int whichProblem = 0;
@@ -241,7 +275,7 @@ void SOLVER_ProcessLine( char* line )
             totalcost += cost;
 
 
-            INFO( "Sol for game %d: A=%d, B=%d. Cost: %lld\n",
+            INFO( "Sol for game %d: A=%lld, B=%lld. Cost: %lld\n",
                     whichProblem,
                     sys.r1[2],
                     sys.r2[2],

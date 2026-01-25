@@ -1,4 +1,5 @@
-#include "string.h"
+#include <stdint.h>
+#include <string.h>
 
 #include "problem_solver.h"
 
@@ -30,3 +31,47 @@ int ndigs( ull n )
     return digs;
 }
 
+/* Count trailing zeros.  This is a pedagogical example only;
+   for efficiency use __builtin_ctzll() or similar.
+*/
+int ctz(ull n)  {
+    // Hope this works...
+    return __builtin_ctzll(n);
+}
+
+/* Greatest Common Divisor,
+ *  Binary Euclid's (aka Stein's) algorithm from wikipedia
+ */
+ull gcd(ull u, ull v)  {
+    if (u == 0)  return v;                 // Identity #1
+    int k = ctz(u | v);                    // Identity #2
+    u >>= k;  v >>= k;
+
+    // d will replace u if d>0, and v if d<0.  Normally, this is
+    // the difference (u-v)/2 and so the larger of u or v will be
+    // replaced, but the first iteration, it is set to the even
+    // one (if any).  Care is required to avoid signed overflow.
+    int64_t d = (v % 2 ? (int64_t)(u/2) : 0)
+              - (u % 2 ? (int64_t)(v/2) : 0);
+    while (d != 0) {
+        d >>= ctz(d);                      // Identity #3
+        if (d > 0)  u = d;  else  v = -d;  // Identity #4
+        // Since u and v are both odd, each loses a bit in the
+        // division, which cancels out in the subtraction.
+        d = (int64_t)(u/2) - (int64_t)(v/2);
+    }
+    return u << k;                         // Identity #2
+}
+
+
+/* Least Common Multiple
+ */
+ull lcm(ull u, ull v)  {
+    if( u == 0 && v == 0 )
+        return 0;
+
+    // Note: overflow might still occur if both u,v are huge
+    // and gcd is very small
+    // This division always yields integer
+    return (u / gcd(u,v)) * v;
+}
