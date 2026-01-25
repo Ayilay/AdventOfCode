@@ -4,7 +4,7 @@ reqs = main.c problem_solver.h Makefile
 executables = part1 part2
 
 # If using MORE source files, add them here
-EXTRA_SRC = 
+EXTRA_SRC = util.c
 reqs += $(EXTRA_SRC)
 
 # Always use these options
