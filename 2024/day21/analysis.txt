@@ -1,0 +1,5 @@
+Solution: <v<A >>^A vA ^A <vA  <AA>>^AAvA<^A>AAvA^A<vA>^AA<A>A<v<A>A>^AAAvA<^A>A
+Mine:     v<<A ^>>A vA ^A v<<A ^>>AAv<A<A^>>AA<Av>AA^Av<A^>AA<A>Av<A<A^>>AAA<Av>A^A
+
+
+
